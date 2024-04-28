@@ -59,7 +59,7 @@ export function Posts({ content }) {
     getData() 
   };
 
-  const handleNewComment = () => {
+  const handleNewComment = async () => {
     event.preventDefault();
 
     const comment = {
@@ -74,7 +74,7 @@ export function Posts({ content }) {
       "publishedAt": new Date(),
       "likeCount": 2
     }
-    postData(comment)
+    await postData(comment)
     setNewCommentText(""); 
     getData() 
   };
